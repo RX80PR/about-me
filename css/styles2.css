@@ -1,0 +1,247 @@
+/* 基本的なボディスタイル */
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/* メインコンテナ */
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* スクロール可能なコンテンツエリア */
+.scroll-content {
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 画像コンテナ */
+.image-container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 画像スタイル */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* アクティブな画像 */
+.image-container img.active {
+    opacity: 1;
+}
+
+/* テキストコンテンツ */
+.text-content {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: bold;
+    color: #ffffff;
+    writing-mode: vertical-rl; /* 縦書き */
+    text-orientation: upright;
+    letter-spacing: 0.1em;
+    line-height: 2.5em;
+    font-size: 23px;
+    position: fixed;
+    top: 37.5%;
+    right: 0px;
+    transform: translateY(-50%);
+    padding: 0px;
+    padding-top: 180px;
+    border-radius: 10px;
+    height: 80vh;
+    max-width: 80vw;
+    overflow-x: auto;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+/* テキストのフェードインアニメーション */
+.text-content span {
+    display: inline-block;
+    animation: fadeIn 0.5s forwards;
+    opacity: 0;
+}
+
+/* テキストアイテムの間隔 */
+.text-item {
+    margin-bottom: 40px;
+    display: block;
+}
+
+/* スクロールバーを非表示 */
+.text-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* コントロールボタン */
+.control-buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+}
+
+/* ボタンスタイル */
+.control-buttons button {
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+    text-shadow: 
+        0 0 42px #000000,
+        0 0 42px #000000,
+        0 0 42px #000000,
+        0 0 42px #0077ff,
+        0 0 82px #0077ff,
+        0 0 92px #0077ff,
+        0 0 102px #0077ff,
+        0 0 151px #0077ff;
+    animation: pulsate 1.0s infinite alternate;  
+}
+
+/* ボタンホバー効果 */
+.control-buttons button:hover {
+    animation: none;
+    text-shadow: 
+        0 0 42px #ff0000,
+        0 0 42px #ff0000,
+        0 0 42px #ff0000,
+        0 0 40px #ff0000,
+        0 0 80px #ff0000,
+        0 0 90px #ff0000,
+        0 0 100px #ff0000,
+        0 0 150px #ff0000;
+}
+
+/* テキストコンテンツの見出し */
+.text-content h1 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* 星の背景 */
+.star-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 星のスタイル */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* 青い星 */
+.star-blue {
+    background-color: rgb(0, 0, 255);
+}
+
+/* 赤い星 */
+.star-red {
+    background-color: #ff0000;
+}
+
+/* クレジットコンテナ */
+.credit-container {
+    height: 100px;
+    position: fixed;
+    bottom: 20px;
+    right: 0px;
+    left: auto;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    z-index: 1000;
+    max-width: 100%;
+    width: auto;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+/* クレジット行 */
+.credit-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* クレジットテキスト */
+.credit-row p {
+    margin: 0 0 0 10px;
+}
+
+/* クレジットリンク */
+.credit-row a {
+    margin-left: 10px;
+    margin-right: 0;
+    color: #add8e6;
+    text-decoration: none;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* パルセートアニメーション */
+@keyframes pulsate {
+    0% {
+        text-shadow:
+            0 0 42px #0059ffb4,
+            0 0 42px #0059ffb4,
+            0 0 42px #0059ffb4,
+            0 0 10px #0077ff,
+            0 0 45px #0077ff,
+            0 0 55px #0077ff,
+            0 0 70px #0077ff,
+            0 0 80px #0077ff;
+    }
+    100% {
+        text-shadow:
+            0 0 42px #0059ffb4,
+            0 0 42px #0059ffb4,
+            0 0 42px #0059ffb4,
+            0 0 40px #0077ff,
+            0 0 80px #0077ff,
+            0 0 90px #0077ff,
+            0 0 100px #0077ff,
+            0 0 150px #0077ff;
+    }
+}

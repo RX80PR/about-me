@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="writing-container"></div>
+    
+    <header>
+        <div class="site-title">自己紹介サイト</div>
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="#home" class="wafuu-button">ホーム</a></li>
+                    <li><a href="#about" class="wafuu-button">自己紹介</a></li>
+                    <li><a href="#skills" class="wafuu-button">お問い合わせ</a></li>
+                    <li><a href="contact.html" class="wafuu-button">好きなもの</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="sakura-container"></div> 
+    
+    <!-- BGM用のaudio要素を追加 -->
+    <audio id="bgm" loop>
+        <source src="audios/和風bgm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- BGMコントロールボタンを追加 -->
+    <button id="bgm-control" class="wafuu-button">BGM 再生/停止</button>
+
+    <!-- 縦書きテキスト表示エリア -->
+    <div id="clock" class="clock"></div>
+    <div class="vertical-text" id="verticalText"></div>
+    <div class="text-content" id="textContent">
+        &emsp;&emsp;ようこそ！<br>
+        &emsp;このサイトは私の好きなものや得意なことなどを紹介する自己紹介サイトです。本ページは和をイメージとしたデザインになっています。右下にあるボタンをクリックすることでBGMを再生、停止することができます。サイト上部にあるボタンはクリックすることで各セクションに移動することができます。ぜひご覧ください！  
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+

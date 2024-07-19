@@ -1,0 +1,231 @@
+/* Google Fontsからの日本語フォントの読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+
+/* 基本的なスタイル設定 */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0e6ff;
+    background-image: url('../images/sakura-haikei.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+/* ヘッダーのスタイル */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: hsl(0, 0%, 0%);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgb(140, 0, 255);
+    padding: 10px 0;
+}
+
+/* サイトタイトルのスタイル */
+.site-title {
+    position: absolute;
+    top: 1.8px;
+    left: 225px;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 1.7em;
+    color: rgb(0, 132, 255);
+}
+
+/* ヘッダー内のコンテンツ配置 */
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* ナビゲーションのスタイル */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+/* 和風ボタンのスタイル */
+.wafuu-button {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #FAF0E6;
+    color: #8E354A;
+    border: 2px solid #8E354A;
+    font-family: "Yu Mincho", "YuMincho", serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+/* 和風ボタンの装飾（花びら）*/
+.wafuu-button::before,
+.wafuu-button::after {
+    content: '❀';
+    position: absolute;
+    font-size: 20px;
+    color: #ffffff;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.wafuu-button::before {
+    top: -5px;
+    left: -5px;
+    transform: rotate(-45deg);
+}
+
+.wafuu-button::after {
+    bottom: -5px;
+    right: -5px;
+    transform: rotate(45deg);
+}
+
+/* 和風ボタンのホバー効果 */
+.wafuu-button:hover {
+    background-color: #FFDAB9;
+}
+
+.wafuu-button:hover::before,
+.wafuu-button:hover::after {
+    color: #FF69B4;
+    opacity: 1;
+}
+
+/* メインコンテンツのスタイル */
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0px;
+    margin: 120px 20px 20px;
+}
+
+/* 桜のアニメーションコンテナ */
+#sakura-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 個々の桜の花びらのスタイル */
+.sakura {
+    position: absolute;
+    background-image: url('../images/sakura.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    animation: fall linear infinite;
+}
+
+/* 桜の落下アニメーション */
+@keyframes fall {
+    0% {
+        transform: translate(0, -10px) rotate(0deg);
+    }
+    100% {
+        transform: translate(50px, 100vh) rotate(720deg);
+    }
+}
+
+/* BGMコントロールボタンのスタイル */
+#bgm-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* 縦書きテキストのスタイル */
+.vertical-text {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: bold;
+    color: #a10202;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 0.1em;
+    line-height: 2.5em;
+    font-size: 25px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: rgba(53, 90, 4, 0.692);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-height: 40vh;
+    max-width: 80vw;
+    overflow-x: auto;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+/* 非表示のテキストコンテンツ */
+.text-content {
+    display: none;
+}
+
+/* 縦書きテキストの個々の文字のアニメーション */
+.vertical-text span {
+    display: inline-block;
+    animation: fadeIn 0.5s forwards;
+    opacity: 0;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 時計のスタイル */
+.clock {
+    position: fixed;
+    top: 0px;
+    right: 20px;
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 2.0em;
+    color: #FFC0CB;
+    z-index: 1000;
+    font-weight: bold;
+}
+
+/* 秒数の小さいフォントサイズ */
+.small-seconds {
+    font-size: 0.7em;
+}
+
+/* その他のスタイル */
+h1 {
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+

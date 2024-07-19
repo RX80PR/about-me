@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夜景 - 好きなもの</title>
+    <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body>
+
+    <!-- クレジット情報コンテナ -->
+    <div class="credit-container">
+
+        <!-- BGM情報 -->
+        <div class="credit-row">
+          <p>BGM: Popsicle by KODOMOi <a href="https://soundcloud.com/kodomoimusic">https://soundcloud.com/kodomoimusic</a></p>
+        </div>
+
+        <!-- ライセンス情報 -->
+        <div class="credit-row">
+          <p>Creative Commons — Attribution 3.0 Unported — CC BY 3.0</p>
+        </div>
+
+        <!-- ダウンロード情報 -->
+        <div class="credit-row">
+          <p>無料ダウンロード / ストリーム: <a href="http://bit.ly/2BoP4os">http://bit.ly/2BoP4os</a></p>
+        </div>
+
+        <!-- プロモーション情報 -->
+        <div class="credit-row">
+          <p>ミュージックプロモーション: Audio Library <a href="https://youtu.be/z6mKD6hpKBU">https://youtu.be/z6mKD6hpKBU</a></p>
+        </div>
+
+        <!-- 画像の著作者情報 -->
+        <div class="credit-row">
+            <p>著作者：</p>
+            <a href="https://jp.freepik.com/free-photo/starry-sky-town_233234278.htm#query=%E5%A4%9C%E6%99%AF&position=7&from_view=keyword&track=ais_user&uuid=9ff79c24-8e99-45ae-af70-a9156d1d219a">Freepik</a>
+            <a href="https://jp.freepik.com/free-photo/meishii-xing-kongno-chui-zhishotto_11818437.htm#fromView=search&page=1&position=1&uuid=a7655512-d0e7-4e79-a208-03f3b621a239">著作者：wirestock／出典：Freepik</a>
+            <a href="https://www.freepik.com/free-photo/high-angle-beautiful-city-landscape-nighttime_27643232.htm">Image by freepik</a>
+            <a href="https://jp.freepik.com/free-photo/souruno-han-guonosukairain-nan-han-shan-cheng-bei-mennorottewarutomorute-han-guono-zui-gaono-jing-se_11600345.htm#fromView=search&page=1&position=34&uuid=2f6e5f68-4e8f-4561-b54b-91de8023ec70">著作者：tawatchai07／出典：Freepik</a>
+          </div>
+      </div>
+
+    <!-- ナビゲーションボタン -->
+    <div class="control-buttons">
+        <button id="top-button">トップページ</button>
+        <button id="bgm-control">BGM 再生</button>
+    </div>
+    
+    <!-- メインコンテンツコンテナ -->
+    <div class="container">
+        <div class="scroll-content">
+            <div class="image-container">
+                <img src="images/夜景1.jpg">
+            </div>
+            <div class="image-container">
+                <img src="images/夜景2.jpg">
+            </div>
+            <div class="image-container">
+                <img src="images/夜景3.jpg">
+            </div>
+            <div class="image-container">
+                <img src="images/星空.jpg">
+            </div>
+            <div class="image-container">
+                <img src="images/札幌夜景.webp">
+            </div>
+            <div class="image-container">
+                <img src="images/レインボーブリッジ.jpg">
+            </div>
+            <div class="image-container">
+                <img src="images/夜景4.webp">
+            </div>
+            <div class="image-container">
+                <img src="images/夜景5.jpg">
+            </div>
+        </div>
+        
+        <div class="star-background"></div>
+
+        <!-- テキストコンテンツ部分 -->
+        <div class="text-content">
+            <h1>好きなもの① 夜景</h1>
+
+             <!-- 縦書きテキスト表示エリア -->
+            <div id="verticalText" class="vertical-text"></div>
+            
+            <!-- 非表示のテキストコンテンツ（JavaScriptで表示制御） -->
+            <div id="textContent" style="display: none;">
+                &emsp;私が好きなもの一つ目は夜景です。高層ビルの窓から漏れる光、空に輝く星などが幻想的で心が癒されます。これらが織りなす光景は、昼と夜ではまるで違った景色に見えるというのが夜景が好きなポイントの一つです。
+                都会の喧騒から離れ、澄み切った夜空を見上げると、無数の星々が私たちを出迎えてくれます。天の川の壮大な景色、流れ星の儚い輝き、惑星の神秘的な光。宇宙の広大さと神秘を感じさせる星空は、見る者の心を癒し、想像力を掻き立てます。
+                季節ごとに街を彩るイルミネーションは、夜の街に魔法をかけたかのような幻想的な空間を作り出します。クリスマスシーズンの温かな光、夏祭りの賑やかな電飾、桜の季節のライトアップ。これらの光の演出は、人々の心に喜びと驚きをもたらし、特別な思い出を作るお手伝いをしてくれます。
+            </div>
+        </div>
+    </div>
+
+    <!-- BGM制御部分 -->
+    <div class="audio-control">
+        <audio id="bgm" loop>
+            <source src="audios/KODOMOi - Popsicle.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="bgm-control">BGM 停止</button>
+    </div>
+
+    <!-- トップページへの戻りリンク -->
+    <div class="back-link">
+        <a href="index.html">トップページに戻る</a>
+    </div>
+
+    <script src="js/scripts2.js"></script>
+</body>
+</html>
