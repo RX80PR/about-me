@@ -43,32 +43,48 @@ function initializeBGM() {
     bgm = document.getElementById('bgm');
     const bgmControl = document.getElementById('bgm-control');
 
+    // BGMボタンのテキストを更新する関数
+    function updateBgmButtonText() {
+        bgmControl.textContent = isPlaying ? 'BGM 停止' : 'BGM 再生';
+    }
+
+    // BGMの再生/停止を切り替える関数
+    function toggleBGM() {
+        if (bgm.paused) {
+            bgm.play().catch(e => console.log("再生が許可されていません:", e));
+        } else {
+            bgm.pause();
+        }
+        isPlaying = !bgm.paused;
+        updateBgmButtonText();
+    }
+
+    // BGMボタンのクリックイベントリスナーを設定
+    bgmControl.addEventListener('click', toggleBGM);
+
+    // BGMの再生/停止イベントリスナー
+    bgm.addEventListener('play', () => {
+        isPlaying = true;
+        updateBgmButtonText();
+    });
+
+    bgm.addEventListener('pause', () => {
+        isPlaying = false;
+        updateBgmButtonText();
+    });
+
     // BGMの自動再生を試みる
     bgm.play().then(() => {
         isPlaying = true;
-        bgmControl.textContent = 'BGM 停止';
+        updateBgmButtonText();
     }).catch(e => {
         console.log("自動再生が許可されていません:", e);
         isPlaying = false;
-        bgmControl.textContent = 'BGM 再生';
+        updateBgmButtonText();
     });
 
-    // BGM制御ボタンのクリックイベントリスナーを設定
-    bgmControl.addEventListener('click', toggleBGM);
     // ページの可視性変更イベントリスナーを設定
     document.addEventListener("visibilitychange", handleVisibilityChange);
-}
-
-// BGMの再生/停止を切り替える関数
-function toggleBGM() {
-    if (isPlaying) {
-        bgm.pause();
-        bgmControl.textContent = 'BGM 再生';
-    } else {
-        bgm.play().catch(e => console.log("再生が許可されていません:", e));
-        bgmControl.textContent = 'BGM 停止';
-    }
-    isPlaying = !isPlaying;
 }
 
 // ページの可視性変更時にBGMを制御する関数

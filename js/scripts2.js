@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initializeImageContainers();
     initializeBgmControl();
-    initializeTopButton();
+    initializeButtons();
     createNightSky();
     createStarBackground();
     initializeTypewriter();
@@ -60,12 +60,12 @@ function initializeBgmControl() {
 
     // BGMの再生/停止を切り替える関数
     function toggleBgm() {
-        if (isPlaying) {
-            bgm.pause();
-        } else {
+        if (bgm.paused) {
             bgm.play().catch(e => console.log("再生が許可されていません:", e));
+        } else {
+            bgm.pause();
         }
-        isPlaying = !isPlaying;
+        isPlaying = !bgm.paused;
         updateBgmButtonText();
     }
 
@@ -79,7 +79,7 @@ function initializeBgmControl() {
     });
 
     bgm.addEventListener('pause', () => {
-        isPlaying = true;
+        isPlaying = false;
         updateBgmButtonText();
     });
 
@@ -104,10 +104,17 @@ function initializeBgmControl() {
 }
 
 // トップページへ戻るボタンの初期化
-function initializeTopButton() {
+function initializeButtons() {
     const topButton = document.getElementById('top-button');
+    const like1Button = document.getElementById('like1-button');
+    const like2Button = document.getElementById('like2-button');
+
     topButton.addEventListener('click', () => {
         window.location.href = 'index.html';
+    });
+
+    like2Button.addEventListener('click', () => {
+        window.location.href = 'like2.html';
     });
 }
 
@@ -237,7 +244,7 @@ function initializeTypewriter() {
                 if (currentChar !== '>' && currentChar !== '<') {
                     const span = document.createElement('span');
                     span.textContent = currentChar;
-                    span.style.animationDelay = `${index * 0.02}s`;
+                    span.style.animationDelay = `${index * 0.001}s`;
                     verticalText.appendChild(span);
                 }
                 index++;
