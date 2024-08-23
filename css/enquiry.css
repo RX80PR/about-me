@@ -1,6 +1,6 @@
 body {
     font-family: 'Noto Serif JP', serif;
-    background-color: #f3efe0;
+    background-color: #000000;
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,13 +11,15 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 2rem;
     border-radius: 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(140, 203, 255, 0.1);
     width: 100%;
     max-width: 400px;
     border: 1px solid #d4c1a1;
+    position: relative;
+    z-index: 1;
 }
 
 .title {
@@ -57,7 +59,7 @@ textarea {
 }
 
 .submit-btn {
-    background-color: #8a6b48;
+    background-color: #ec0f0f;
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -72,7 +74,7 @@ textarea {
 }
 
 .submit-btn:hover {
-    background-color: #725839;
+    background-color: #34b33ac2;
 }
 
 @keyframes fadeInDown {
@@ -94,4 +96,172 @@ textarea {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.header {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.wafuu-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #949494;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    border: 1px solid #d4c1a1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-weight: bold; /* 文字を太くする */
+}
+
+.wafuu-button:hover {
+    background-color: #d1d1d1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.snow {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-5vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(105vh) rotate(720deg);
+    }
+}
+
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 雪が背景として表示される */
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#ground-snow {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: white;
+    transition: height 10s ease-out;
+    z-index: 1001; /* 最前面に表示されるように z-index を上げる */
+}
+
+#snowman-container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 100px;
+    height: 120px;
+    z-index: 1000; /* 雪だるまが積雪の後ろに表示される */
+}
+
+.snowball {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: all 2s ease-out;
+}
+
+.bottom {
+    width: 60px;
+    height: 60px;
+    left: 20px;
+    bottom: 0;
+}
+
+.middle {
+    width: 40px;
+    height: 40px;
+    left: 30px;
+    bottom: 50px;
+}
+
+.top {
+    width: 30px;
+    height: 30px;
+    left: 35px;
+    bottom: 85px;
+}
+
+.eye {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #333;
+    border-radius: 50%;
+    bottom: 105px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.eye.left {
+    left: 40px;
+}
+
+.eye.right {
+    left: 55px;
+}
+
+.carrot {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid orange;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    left: 47px;
+    bottom: 100px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.arm {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #4e3a28;
+    bottom: 70px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.arm.left {
+    left: 10px;
+    transform: rotate(45deg);
+}
+
+.arm.right {
+    right: 10px;
+    transform: rotate(-45deg);
 }

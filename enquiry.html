@@ -3,39 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせフォーム</title>
-    <link rel="stylesheet" href="css/enquiry.css">
+    <title>お問い合わせ</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/enquiry.css">
 </head>
 <body>
+    <header class="header">
+        <a href="index.html" class="wafuu-button">トップページ</a>
+    </header>
+
     <div class="container">
-        <h1 class="title">お問い合わせ</h1>
+        <h1 id="お問い合わせ" class="title">お問い合わせ</h1>
         <form id="contactForm">
-            <div class="form-group">
+            <div class="form-group" style="--i:1;">
                 <label for="name">お名前</label>
                 <input type="text" id="name" name="name" required>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="--i:2;">
                 <label for="email">メールアドレス</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="--i:3;">
                 <label for="message">メッセージ</label>
                 <textarea id="message" name="message" required></textarea>
             </div>
             <button type="submit" class="submit-btn">送信</button>
         </form>
     </div>
+
+    <div id="snow-container"></div>
+
     <script src="js/enquiry.js"></script>
+    
+
+    <div id="snowman-container">
+        <div id="snowman">
+          <div class="snowball bottom"></div>
+          <div class="snowball middle"></div>
+          <div class="snowball top"></div>
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="carrot"></div>
+          <div class="arm left"></div>
+          <div class="arm right"></div>
+        </div>
+      </div>
+
+      <!-- body の終了タグの直前に以下を追加 -->
+    <div id="ground-snow"></div>
+
 </body>
-<header>
-    <div class="header-content">
-        <h1 class="site-title">自己紹介サイト</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="wafuu-button">トップページ</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
 </html>
