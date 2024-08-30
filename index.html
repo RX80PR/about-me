@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ビューポートの設定でモバイル対応 -->
+    <title>About Me</title> <!-- ページタイトル -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- 外部CSSファイルのリンク -->
 </head>
 <body>
+    <!-- サイトのメインコンテナ -->
     <div id="writing-container"></div>
     
+    <!-- ヘッダーセクション -->
     <header>
-        <div class="site-title">自己紹介サイト</div>
+        <div class="site-title">自己紹介サイト</div> <!-- サイトのタイトル -->
         <div class="header-content">
+            <!-- ナビゲーションメニュー -->
             <nav>
                 <ul>
-                    <li><a href="Me.html" class="wafuu-button">自己紹介</a></li>
-                    <li><a href="enquiry.html" class="wafuu-button">お問い合わせ</a></li>
-                    <li><a href="like.html" class="wafuu-button">好きなもの一</a></li>
+                    <li><a href="Me.html" class="wafuu-button">自己紹介</a></li> <!-- 自己紹介ページへのリンク -->
+                    <li><a href="enquiry.html" class="wafuu-button">お問い合わせ</a></li> <!-- お問い合わせページへのリンク -->
+                    <li><a href="like.html" class="wafuu-button">好きなもの一</a></li> <!-- 好きなものページへのリンク -->
                 </ul>
             </nav>
         </div>
     </header>
+    
+    <!-- サクラのエフェクトを表示するコンテナ -->
     <div id="sakura-container"></div> 
     
-    <!-- BGM用のaudio要素を追加 -->
+    <!-- BGM用のaudio要素 -->
     <audio id="bgm" loop>
-        <source src="audios/和風bgm.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+        <source src="audios/和風bgm.mp3" type="audio/mpeg"> <!-- BGMファイルのソース -->
+        Your browser does not support the audio element. <!-- 非対応ブラウザ向けのメッセージ -->
     </audio>
     
-    <!-- BGMコントロールボタンを追加 -->
+    <!-- BGM再生/停止ボタン -->
     <button id="bgm-control" class="wafuu-button">BGM 再生/停止</button>
 
     <!-- 縦書きテキスト表示エリア -->
-    <div id="clock" class="clock"></div>
-    <div class="vertical-text" id="verticalText"></div>
+    <div id="clock" class="clock"></div> <!-- 時計表示エリア -->
+    <div class="vertical-text" id="verticalText"></div> <!-- 縦書きテキストエリア -->
+    
+    <!-- 本文表示エリア -->
     <div class="text-content" id="textContent">
         &emsp;&emsp;ようこそ！<br>
-        &emsp;このサイトは私の好きなものや得意なことなどを紹介する自己紹介サイトです。本ページは和をイメージとしたデザインになっています。右下にあるボタンをクリックすることでBGMを再生、停止することができます。サイト上部にあるボタンはクリックすることで各セクションに移動することができます。ぜひご覧ください！  
+        &emsp;このサイトは私の好きなものや得意なことなどを紹介する自己紹介サイトです。本サイトは和をイメージとしたデザインになっています。右下にあるボタンをクリックすることでBGMを再生、停止することができます。サイト上部にあるボタンはクリックすることで各セクションに移動することができます。ぜひご覧ください！  
     </div>
 
+    <!-- JavaScriptファイルの読み込み -->
     <script src="js/scripts.js"></script>
 </body>
 </html>
+
 

@@ -1,20 +1,22 @@
+/* ボディ全体のスタイル設定 フォント、背景色、和紙風の背景画像、中央揃え、最小高さの指定 */
 body {
     font-family: 'Noto Serif JP', serif;
-    background-color: #000000;
+    background-color: #f0e6d2; /* 和紙風の背景色 */
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('https://www.transparenttextures.com/patterns/rice-paper-3.png');
+    background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
 }
 
+/*  メインコンテナのスタイル設定 背景色、パディング、ボーダー、シャドウ、位置指定 */
 .container {
-    background-color: #ffffff;
+    background-color: rgba(255, 253, 240, 0.9); /* 薄い和紙色 */
     padding: 2rem;
     border-radius: 0;
-    box-shadow: 0 0 15px rgba(140, 203, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     border: 1px solid #d4c1a1;
@@ -22,44 +24,49 @@ body {
     z-index: 1;
 }
 
+/* タイトルのスタイル設定 */
 .title {
     text-align: center;
-    color: #543e29;
+    color: #4a2e0f; /* 濃い茶色 */
     margin-bottom: 1.5rem;
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeInDown 0.5s ease forwards;
     font-weight: 700;
     letter-spacing: 0.1em;
 }
 
+/* フォームグループのスタイル設定 */
 .form-group {
     margin-bottom: 1rem;
+    position: relative;
 }
 
+/* ラベルのスタイル設定 */
 label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #543e29;
+    color: #4a2e0f;
 }
 
+/*  入力フィールドとテキストエリアのスタイル設定 背景色、ボーダー、フォントサイズ 
+*/
 input, textarea {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #d4c1a1;
     border-radius: 0;
     font-size: 1rem;
-    background-color: #fcfaf5;
+    background-color: rgba(255, 253, 240, 0.5);
     font-family: 'Noto Serif JP', serif;
 }
 
+/* テキストエリアの高さとリサイズ設定 */
 textarea {
     height: 100px;
     resize: vertical;
 }
 
+/* 送信ボタンのスタイル設定 */
 .submit-btn {
-    background-color: #ec0f0f;
+    background-color: #8e2f0d; /* 朱色 */
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -73,195 +80,109 @@ textarea {
     font-family: 'Noto Serif JP', serif;
 }
 
+/* 送信ボタンのホバー時のスタイル設定 */
 .submit-btn:hover {
-    background-color: #34b33ac2;
+    background-color: #a8360f;
 }
 
-@keyframes fadeInDown {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.form-group {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease forwards;
-    animation-delay: calc(var(--i) * 0.1s);
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.header {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
+/* 和風ボタンのスタイル設定 */
 .wafuu-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #949494;
-    color: #000000;
+    background-color: #8e2f0d;
+    color: #fff;
     text-decoration: none;
     font-family: 'Noto Serif JP', serif;
     font-size: 1rem;
     border: 1px solid #d4c1a1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    font-weight: bold; /* 文字を太くする */
+    font-weight: bold;
 }
 
+/* ヘッダーのスタイル設定 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(240, 230, 210, 0.9); /* 和紙風の背景色 */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* ナビゲーションボタンのコンテナ設定 */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* ボタン間の間隔 */
+}
+
+/* 和風ボタンのホバー時のスタイル設定 */
 .wafuu-button:hover {
-    background-color: #d1d1d1;
+    background-color: #a8360f;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-#snow-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden;
+/* コンテナの上部マージンを調整（ヘッダーの高さに対応） */
+.container {
+    margin-top: 80px; /* ヘッダーの高さに応じて調整 */
 }
 
-.snow {
-    position: absolute;
-    background-color: #ffffff;
-    border-radius: 50%;
-    opacity: 0.5;
-    animation: fall linear infinite;
-}
-
-@keyframes fall {
-    0% {
-        transform: translateY(-5vh) rotate(0deg);
+/* レスポンシブデザイン対応 */
+@media (max-width: 600px) {
+    /* ナビゲーションボタンを縦並びに */
+    .nav-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
-    100% {
-        transform: translateY(105vh) rotate(720deg);
+
+    /* モバイル表示時のコンテナのマージン調整 */
+    .container {
+        margin-top: 150px; /* モバイル表示時はさらに余白を増やす */
     }
 }
 
-#snow-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* 雪が背景として表示される */
-    pointer-events: none;
-    overflow: hidden;
-}
-
-#ground-snow {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: white;
-    transition: height 10s ease-out;
-    z-index: 1001; /* 最前面に表示されるように z-index を上げる */
-}
-
-#snowman-container {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 100px;
-    height: 120px;
-    z-index: 1000; /* 雪だるまが積雪の後ろに表示される */
-}
-
-.snowball {
+/* 和風の装飾（SVG画像によるデザイン要素） */
+.container::before,
+.container::after {
+    content: '';
     position: absolute;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1);
-    opacity: 0;
-    transition: all 2s ease-out;
-}
-
-.bottom {
-    width: 60px;
-    height: 60px;
-    left: 20px;
-    bottom: 0;
-}
-
-.middle {
-    width: 40px;
-    height: 40px;
-    left: 30px;
-    bottom: 50px;
-}
-
-.top {
     width: 30px;
     height: 30px;
-    left: 35px;
-    bottom: 85px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.eye {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: #333;
-    border-radius: 50%;
-    bottom: 105px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-}
-
-.eye.left {
-    left: 40px;
-}
-
-.eye.right {
-    left: 55px;
-}
-
-.carrot {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 10px solid orange;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    left: 47px;
-    bottom: 100px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-}
-
-.arm {
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background-color: #4e3a28;
-    bottom: 70px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-}
-
-.arm.left {
+/* コンテナ左上の装飾 */
+.container::before {
+    top: 10px;
     left: 10px;
-    transform: rotate(45deg);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10 50 Q 25 25, 50 10 T 90 50 T 50 90 T 10 50" fill="none" stroke="%238e2f0d" stroke-width="5"/></svg>');
 }
 
-.arm.right {
+/* コンテナ右下の装飾 */
+.container::after {
+    bottom: 10px;
     right: 10px;
-    transform: rotate(-45deg);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10 50 Q 25 25, 50 10 T 90 50 T 50 90 T 10 50" fill="none" stroke="%238e2f0d" stroke-width="5"/></svg>');
+    transform: rotate(180deg);
 }
+
+/* 入力欄の下線スタイル */
+input, textarea {
+    border: none;
+    border-bottom: 1px solid #d4c1a1;
+    transition: border-color 0.3s;
+}
+
+/* 入力欄がフォーカスされたときのスタイル */
+input:focus, textarea:focus {
+    outline: none;
+    border-bottom: 2px solid #8e2f0d;
+}
+
+

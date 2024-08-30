@@ -1,44 +1,25 @@
+// ページがスクロールされたときに呼び出される関数
 function checkScroll() {
-    const sections = document.querySelectorAll('.section');
+    const sections = document.querySelectorAll('.section'); // すべてのセクションを取得
     sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (sectionTop < windowHeight * 0.75) {
-            section.classList.add('visible');
-            const fadeElements = section.querySelectorAll('.fade-in');
-            fadeElements.forEach(el => el.classList.add('visible'));
-            const typingElement = section.querySelector('.typing');
+        const sectionTop = section.getBoundingClientRect().top; // セクションの上端位置を取得
+        const windowHeight = window.innerHeight; // ウィンドウの高さを取得
+        if (sectionTop < windowHeight * 0.75) { // セクションがウィンドウの75%内に入った場合
+            section.classList.add('visible'); // セクションに「visible」クラスを追加
+            const fadeElements = section.querySelectorAll('.fade-in'); // セクション内のフェードイン要素を取得
+            fadeElements.forEach(el => el.classList.add('visible')); // フェードイン要素にも「visible」クラスを追加
+            const typingElement = section.querySelector('.typing'); // タイピングエフェクト要素を取得
             if (typingElement) {
+                // タイピングアニメーションを適用
                 typingElement.style.animation = 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite';
             }
         }
     });
 }
 
-function createCherryBlossom() {
-    const cherryBlossom = document.createElement('div');
-    cherryBlossom.classList.add('cherry-blossom');
-    
-    const size = Math.random() * 10 + 5;
-    cherryBlossom.style.width = `${size}px`;
-    cherryBlossom.style.height = `${size}px`;
-    
-    cherryBlossom.style.left = `${Math.random() * 100}vw`;
-    cherryBlossom.style.animationDuration = `${Math.random() * 5 + 5}s`;
-    
-    document.querySelector('.cherry-blossom-container').appendChild(cherryBlossom);
-    
-    setTimeout(() => {
-        cherryBlossom.remove();
-    }, 10000);
-}
-
-function startCherryBlossomAnimation() {
-    setInterval(createCherryBlossom, 300);
-}
-
-window.addEventListener('scroll', checkScroll);
+// ページのスクロールイベントとロードイベントにリスナーを追加
+window.addEventListener('scroll', checkScroll); // スクロール時にcheckScroll関数を呼び出す
 window.addEventListener('load', () => {
-    checkScroll();
-    startCherryBlossomAnimation();
+    checkScroll(); // ページ読み込み時に一度checkScrollを実行
 });
+

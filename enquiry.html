@@ -4,53 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせ</title>
+    <!-- Google FontsからNoto Serif JPフォントを読み込み -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 外部スタイルシートの読み込み -->
     <link rel="stylesheet" href="css/enquiry.css">
 </head>
 <body>
+    <!-- ヘッダーセクション -->
     <header class="header">
-        <a href="index.html" class="wafuu-button">トップページ</a>
+        <nav class="nav-buttons">
+            <!-- ナビゲーションボタン -->
+            <a href="index.html" class="wafuu-button">トップページ</a>
+            <a href="like.html" class="wafuu-button">好きなもの二</a>
+            <a href="like2.html" class="wafuu-button">好きなもの一</a>
+        </nav>
     </header>
 
+    <!-- メインコンテンツのコンテナ -->
     <div class="container">
+        <!-- お問い合わせのタイトル -->
         <h1 id="お問い合わせ" class="title">お問い合わせ</h1>
+        
+        <!-- お問い合わせフォーム -->
         <form id="contactForm">
+            <!-- 名前入力フィールド -->
             <div class="form-group" style="--i:1;">
                 <label for="name">お名前</label>
                 <input type="text" id="name" name="name" required>
             </div>
+            <!-- メールアドレス入力フィールド -->
             <div class="form-group" style="--i:2;">
                 <label for="email">メールアドレス</label>
                 <input type="email" id="email" name="email" required>
             </div>
+            <!-- メッセージ入力フィールド -->
             <div class="form-group" style="--i:3;">
                 <label for="message">メッセージ</label>
                 <textarea id="message" name="message" required></textarea>
             </div>
+            <!-- 送信ボタン -->
             <button type="submit" class="submit-btn">送信</button>
         </form>
     </div>
 
+    <!-- 背景の雪のアニメーション用コンテナ -->
     <div id="snow-container"></div>
 
+    <!-- 外部JavaScriptファイルの読み込み -->
     <script src="js/enquiry.js"></script>
-    
-
-    <div id="snowman-container">
-        <div id="snowman">
-          <div class="snowball bottom"></div>
-          <div class="snowball middle"></div>
-          <div class="snowball top"></div>
-          <div class="eye left"></div>
-          <div class="eye right"></div>
-          <div class="carrot"></div>
-          <div class="arm left"></div>
-          <div class="arm right"></div>
-        </div>
-      </div>
-
-      <!-- body の終了タグの直前に以下を追加 -->
-    <div id="ground-snow"></div>
-
 </body>
 </html>
